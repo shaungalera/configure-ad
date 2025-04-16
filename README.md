@@ -164,17 +164,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 ![image](https://github.com/user-attachments/assets/2a0d03a0-3eaa-4779-8ee5-e1cf62949f19)
 ![image](https://github.com/user-attachments/assets/1fcb9fd7-661f-4390-83aa-c093e81fee08)
 ![image](https://github.com/user-attachments/assets/e0a0365d-33d8-44dc-815b-5e26a07afcba)
-![image](https://github.com/user-attachments/assets/4a1f0bce-c683-4c5f-849e-e8c010895845)
 
 . **Log into Client 1 using one of the created accounts**<br>
 
+![image](https://github.com/user-attachments/assets/4a1f0bce-c683-4c5f-849e-e8c010895845)
+
 <h2>Part 4: Group Policy and Managing Accounts</h2>
 
-Account Lockout Configuration
+**Account Lockout Configuration**<br>
 
-Log in to DC-1.
-Open Group Policy Management.
-Edit the Default Domain Policy:
-Set account lockout threshold to 5 invalid attempts.
-Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.
-Unlock the account in ADUC and reset the password.
+1.) Log in to DC-1.<br>
+2.) Open Group Policy Management.<br>
+3.) Edit the Default Domain Policy:<br>
+  - Set account lockout threshold to 5 invalid attempts.<br>
+  
+4.) Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.<br>
+5.) Unlock the account in ADUC and reset the password.<br>
