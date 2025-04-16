@@ -180,3 +180,50 @@ This tutorial outlines the implementation of on-premises Active Directory within
   
 4.) Attempt to log in with a user account using incorrect passwords. Observe the account lockout behavior.<br>
 5.) Unlock the account in ADUC and reset the password.<br>
+
+- **Type gpmc.msc into the start window**
+- **Right click and edit the default domain policy**
+- **Navigate to the account lockout policy**
+- **Adjust the lockout policy**
+- **You can either wait for the policy to auto update (~90 minutes) or log into Client 1 as Jane and force the policy update**
+- **Attempt to login with the incorrect password**
+- **Back on DC-1 Open 'Active Directory Users and Computers' and search for the locked out user**
+- **Find the user account and unlock it**
+![image](https://github.com/user-attachments/assets/e91acca1-5cdf-4750-90da-5e78c109c84a)
+- **You can also reset the password + unlock the account by right clicking on the user name**
+![image](https://github.com/user-attachments/assets/5750cb33-7609-49e0-b22d-da683fc5d201)
+- **Verify that the account has been unlocked by logging into Client-1 using the correct password**
+
+#### **Enable and Disable Accounts**
+1. Disable a user account in ADUC.
+2. Attempt to log in with the disabled account and observe the error message.
+3. Re-enable the account and log in successfully.
+
+- **Right click and disable the account**
+![image](https://github.com/user-attachments/assets/52d35693-713e-41c6-8d52-5f37b6277b1a)
+
+- **Attempt to login**
+![image](https://github.com/user-attachments/assets/16a914fd-97ad-40ea-93af-090cfc2836e1)
+
+- **Re-enable the account from DC-1**
+![image](https://github.com/user-attachments/assets/9f7affd5-c1b6-45c0-869e-9ee9cf83920b)
+
+- **You should be able to log into Client-1 using the re-enabled account**
+
+#### **Observing Logs**
+1. Review authentication and account-related logs in Event Viewer:
+   - Log on `DC-1` for domain-level events (shown below).
+   - Log on `Client-1` for local events.
+  
+- **Open eventvwr.msc using the start menu in DC-1**
+- **Navigate to the Security window and find the activity for the test account**
+- **Open Event Viewer using Client-1 and view the audit failures**
+![image](https://github.com/user-attachments/assets/c8957a16-269c-4783-929d-f5ea8b3fb5cc)
+- **If you are using a non-admin account, you won't be able to see the security events**
+- **You can either log off Client 1 and login using an admin account or run the Event Viewer as an admin and enter admin credentials**
+![image](https://github.com/user-attachments/assets/b967ae95-b981-4b6a-b712-07395e4bd4db)
+![image](https://github.com/user-attachments/assets/f8aa9970-11f2-4a72-bc2f-4f08886761b2)
+
+### Completion
+
+Congratulations! You have successfully deployed and configured an on-premises Active Directory environment in Azure.
